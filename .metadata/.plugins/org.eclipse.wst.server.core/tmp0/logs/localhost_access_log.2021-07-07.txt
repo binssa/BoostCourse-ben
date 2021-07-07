@@ -34,3 +34,5 @@
 0:0:0:0:0:0:0:1 - - [07/Jul/2021:21:58:57 +0900] "GET /firstweb/LifecycleServlet HTTP/1.1" 200 208
 0:0:0:0:0:0:0:1 - - [07/Jul/2021:22:00:47 +0900] "POST /firstweb/LifecycleServlet HTTP/1.1" 200 41
 0:0:0:0:0:0:0:1 - - [07/Jul/2021:22:00:49 +0900] "GET /firstweb/LifecycleServlet HTTP/1.1" 200 208
+127.0.0.1 - - [07/Jul/2021:22:10:56 +0900] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [07/Jul/2021:22:10:56 +0900] "GET /firstweb/Header HTTP/1.1" 200 740

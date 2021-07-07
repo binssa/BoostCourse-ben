@@ -11,7 +11,6 @@ INDEX VERSION 1.131+/Users/sahyeonbin/Desktop/2021_Study/boostcourse/boostcourse
 1227316214.index
 325783306.index
 1826904567.index
-1394740979.index
 1730113464.index
 2501727591.index
 2513357563.index
