@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,6 +38,13 @@ public class DoLogin extends HttpServlet {
 		CustomerService service = new CustomerService();
 		Customer customer = service.findCustomer(customerId);
 		request.setAttribute("customer", customer);
+		
+		// JSTL forEach
+		List<Customer> customers = new ArrayList<>();
+		customers.add(new Customer("id006", "Kim", "kim@abc.com"));
+		customers.add(new Customer("id007", "Lee", "lee@abc.com"));
+		customers.add(new Customer("id008", "Park", "park@abc.com"));
+		request.setAttribute("customerList", customers);
 		
 		
 		String page = "";
