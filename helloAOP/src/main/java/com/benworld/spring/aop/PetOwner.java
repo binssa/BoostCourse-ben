@@ -8,7 +8,7 @@ public class PetOwner {
 	
 	// Pet 주인이 소유한 동물 
 	@Autowired //Wiring by Type
-	@Qualifier(value="qf_cat") //AnimalType이 Dog, Cat 2가지여서 명시해줘야함.
+	@Qualifier(value="qf_dog") //AnimalType이 Dog, Cat 2가지여서 명시해줘야함.
 //	@Resource // Wiring by Name
 	private AnimalType animal;
 	

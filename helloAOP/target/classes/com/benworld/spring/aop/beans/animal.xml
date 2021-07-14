@@ -28,7 +28,8 @@
 	<bean id="logger" class="com.benworld.spring.aop.Logger">
 		
 	</bean>
-	<aop:config>
+	<!-- Use XML -->
+	<!-- <aop:config>
 		<aop:aspect id="myAspect" ref="logger">
 			<aop:pointcut
 				expression="execution(void com.benworld.spring.aop.*.sound())"
@@ -36,5 +37,7 @@
 			<aop:before method="aboutToSound"
 				pointcut-ref="selectSound" />
 		</aop:aspect>
-	</aop:config>
+	</aop:config> -->
+	<!-- Use Annotation -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans>
