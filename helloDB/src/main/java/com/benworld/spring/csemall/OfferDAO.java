@@ -59,4 +59,10 @@ public class OfferDAO {
 		String sqlStatement ="update offers set name=?, email=?, text=? where id=?";
 		return (jdbcTemplateObject.update(sqlStatement, new Object[] {name, email, text, id})==1);
 	}
+	
+	public boolean delete(int id) {
+		
+		String sqlStatement = "delete from offers where id=?";
+		return (jdbcTemplateObject.update(sqlStatement, new Object[] {id})==1);
+	}
 }
