@@ -21,6 +21,15 @@ public class MainApp {
 		Offer offer = offerDAO.getOffer("sa");
 		System.out.println(offer);
 		
+		Offer insertOffer = new Offer("Ji", "ji@abc.com", "This is Ji");
+		if(offerDAO.insert(insertOffer)) {
+			System.out.println("Object is inserted successfully");
+			System.out.println(offerDAO.getOffer(insertOffer.getName()));
+		}else {
+			System.out.println("Insert Failed");
+		}
+		
+		
 		context.close();
 	}
 

@@ -28,38 +28,24 @@ public class OfferDAO {
 	}
 	
 	public Offer getOffer(String name) {
-		String sqlStatement = "select * from offers where name=?";
 		
-		return jdbcTemplateObject.queryForObject(sqlStatement, new Object[] {name}, 
-				new RowMapper<Offer>() { //anonymous class
-					public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
-						
-						Offer offer = new Offer();
-						offer.setId(rs.getInt("id"));
-						offer.setName(rs.getString("name"));
-						offer.setEmail(rs.getString("email"));
-						offer.setText(rs.getString("text"));
-						
-						return offer;
-					}
-		});
+		String sqlStatement = "select * from offers where name=?";
+		return jdbcTemplateObject.queryForObject(sqlStatement, new Object[] {name}, new OfferMapper());
 	}
 	
 	public List<Offer> getOffers() {
-		String sqlStatement = "select * from offers";
 		
-		return jdbcTemplateObject.query(sqlStatement, 
-				new RowMapper<Offer>() { //anonymous class
-					public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
-						
-						Offer offer = new Offer();
-						offer.setId(rs.getInt("id"));
-						offer.setName(rs.getString("name"));
-						offer.setEmail(rs.getString("email"));
-						offer.setText(rs.getString("text"));
-						
-						return offer;
-					}
-		});
+		String sqlStatement = "select * from offers";
+		return jdbcTemplateObject.query(sqlStatement, new OfferMapper());
+	}
+	
+	public boolean insert(Offer offer) {
+		
+		String name = offer.getName();
+		String email = offer.getEmail();
+		String text = offer.getText();
+		
+		String sqlStatement ="insert into offers(name, email, text) values (?, ?, ?)";
+		return (jdbcTemplateObject.update(sqlStatement, new Object[] {name, email, text})==1);
 	}
 }
