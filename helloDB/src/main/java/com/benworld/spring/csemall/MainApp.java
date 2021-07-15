@@ -1,5 +1,7 @@
 package com.benworld.spring.csemall;
 
+import java.util.List;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
@@ -10,6 +12,14 @@ public class MainApp {
 		
 		OfferDAO offerDAO = (OfferDAO) context.getBean("offerDAO");
 		System.out.println("Row Count : " + offerDAO.getRowCount());
+		
+		List<Offer> offerList = offerDAO.getOffers();
+		for(Offer offer: offerList) {
+			System.out.println(offer);
+		}
+		
+		Offer offer = offerDAO.getOffer("sa");
+		System.out.println(offer);
 		
 		context.close();
 	}
