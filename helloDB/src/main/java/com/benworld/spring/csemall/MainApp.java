@@ -21,12 +21,21 @@ public class MainApp {
 		Offer offer = offerDAO.getOffer("sa");
 		System.out.println(offer);
 		
-		Offer insertOffer = new Offer("Ji", "ji@abc.com", "This is Ji");
-		if(offerDAO.insert(insertOffer)) {
-			System.out.println("Object is inserted successfully");
-			System.out.println(offerDAO.getOffer(insertOffer.getName()));
+//		Offer insertOffer = new Offer("Lee", "lee@abc.com", "Ms.Lee");
+//		if(offerDAO.insert(insertOffer)) {
+//			System.out.println("Object is inserted successfully");
+//			System.out.println(offerDAO.getOffer(insertOffer.getName()));
+//		}else {
+//			System.out.println("Insert Failed");
+//		}
+		
+		Offer updateOffer = offerDAO.getOffer("Lee");
+		System.out.println("Before update" + updateOffer);
+		updateOffer.setText("I'm Mr.Lee");
+		if(offerDAO.update(updateOffer)) {
+			System.out.println("After update" + updateOffer);
 		}else {
-			System.out.println("Insert Failed");
+			System.out.println("Update Failed");
 		}
 		
 		
