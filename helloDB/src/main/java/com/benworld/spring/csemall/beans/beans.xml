@@ -8,7 +8,13 @@
 	<!-- jdbc 연결 정보가 담긴 파일 연결을 위함. -->
 	<context:property-placeholder
 		location="com/benworld/spring/props/jdbc.properties" />
-		
+	<!-- 	Annotation 기능 활성 -->
+	<context:annotation-config></context:annotation-config>
+	<!-- 	Component Scan을 할 Package 명시  -->
+	<context:component-scan
+		base-package="com.benworld.spring.csemall">
+	</context:component-scan>
+	
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
@@ -19,7 +25,8 @@
 	</bean>
 	
 	
-	<bean id="offerDAO" class="com.benworld.spring.csemall.OfferDAO">
+	<!-- <bean id="offerDAO" class="com.benworld.spring.csemall.OfferDAO">
 		<property name="dataSource" ref="dataSource"></property>
-	</bean>
+	</bean> -->
+	
 </beans>
