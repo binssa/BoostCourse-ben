@@ -126,5 +126,8 @@ Temporary Items
 # Ingnore Properties file
 jdbc.properties
 
+# Ingnore target Folder
+*/target/*
+
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,macos,java
