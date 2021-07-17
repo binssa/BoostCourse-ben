@@ -1,10 +1,22 @@
 package com.benworld.model;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Offer {
 	
+	
 	private int id;
+	
+	// @Valid에서 검증 시 사용할 조건 설정 
+	@Size(min=2, max=100, message="Name must 2~100 character")
 	private String name;
+	@Email(message="Please provide a valid email address")
+	@NotEmpty(message="The Email address cannot be empty")
 	private String email;
+	@Size(min=5, max=100, message="Name must 5~100 character")
 	private String text;
 	
 	public Offer() {
