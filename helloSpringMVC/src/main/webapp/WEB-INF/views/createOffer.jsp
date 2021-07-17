@@ -42,7 +42,10 @@ This is Create Offer Page
 					<form:errors cssClass="error" path="text"></form:errors>
 				</td>
 			</tr>
-			<tr><td></td><td><input name="Create Offer" type="submit"></td></tr>
+			<tr>
+				<td></td>
+				<td><input name="Create Offer" type="submit"></td>
+			</tr>
 		</table>
 	</form:form>
 </body>
