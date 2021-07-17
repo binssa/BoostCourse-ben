@@ -36,6 +36,8 @@ public class OffersController {
 	@RequestMapping("/createOffer")
 	public String createOffers(Model model) {
 		
+		// Spring Form을 사용하기 위한 Offer 객체 생성 
+		model.addAttribute(new Offer());
 		return "createOffer";
 	}
 	

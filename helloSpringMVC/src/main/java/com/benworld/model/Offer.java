@@ -16,7 +16,7 @@ public class Offer {
 	@Email(message="Please provide a valid email address")
 	@NotEmpty(message="The Email address cannot be empty")
 	private String email;
-	@Size(min=5, max=100, message="Name must 5~100 character")
+	@Size(min=5, max=100, message="Text must 5~100 character")
 	private String text;
 	
 	public Offer() {
