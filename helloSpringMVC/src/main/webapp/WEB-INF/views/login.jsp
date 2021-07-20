@@ -10,6 +10,9 @@
 </head>
 <body onload='document.f.username.focus();'>
 	<h3>Custome Login with Username and Password</h3>
+	<c:if test="${not empty logoutMsg }">
+			<div style="color:#0000ff"><h3>${logoutMsg }</h3></div>
+		</c:if>
 	<form name='f' action="<c:url value="/login"/>" method='POST'>
 		<c:if test="${not empty errorMsg }">
 			<div style="color:#ff0000"><h3>${errorMsg }</h3></div>
