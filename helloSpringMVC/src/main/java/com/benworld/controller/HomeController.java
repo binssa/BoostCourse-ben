@@ -2,6 +2,8 @@ package com.benworld.controller;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -20,13 +22,14 @@ public class HomeController {
 //	private static final Logger logger = LoggerFactory.getLogger("com.benworld.HomeController");와 같은 기능 
 	// http://localhost:8080/helloSpringMVC/
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String showHome(Locale locale, Model model) {
+	public String showHome(HttpServletRequest request, Locale locale, Model model) {
 		
-		logger.trace("trace level : Welecom home! The Client locale is {}", locale);
-		logger.debug("debug level : Welecom home! The Client locale is {}", locale);
 		logger.info("info level : Welecom home! The Client locale is {}", locale);
-		logger.warn("warn level : Welecom home! The Client locale is {}", locale);
-		logger.error("error level : Welecom home! The Client locale is {}", locale);
+		
+		String url = request.getRequestURL().toString();
+		String clientIPaddress = request.getRemoteAddr();
+		logger.info("Reqeust URL) : "+ url);
+		logger.info("Client IP : " + clientIPaddress);
 		
 		return "home"; // view's Logical Name
 	}
